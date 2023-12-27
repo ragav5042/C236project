@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let html
+        $(document).ready(function(){
+            $.ajax({
+                url:"http://ec2-3-108-196-161.ap-south-1.compute.amazonaws.com/",
+                success: function (data){
+                        html=data
+                        showhtml()
+                }
+            })
+        })
+        function showhtml(){
+            $("body").append(html)
+            $("img").attr("src","http://ec2-3-108-196-161.ap-south-1.compute.amazonaws.com/static/images/login.png")
+        }
+    </script>
+</body>
+</html>
